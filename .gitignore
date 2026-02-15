@@ -1,0 +1,31 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary audio and recordings folders
+audio/
+certs/
+data/
+uploads/
+recordings/
+
+# Test and utility scripts not needed on GitHub
+check_recordings.py
+clean_temp.py
+generate_cert.py
+test_mic.py
+test_mic1.py
+
+# Logs
+app.log
+*.log
+
+# Virtual environment
+venv/
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
