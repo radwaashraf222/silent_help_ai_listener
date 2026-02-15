@@ -1,0 +1,13 @@
+torch
+openai-whisper
+transformers
+datasets
+arabert
+fastapi
+uvicorn
+librosa
+soundfile
+scipy
+numpy
+webrtcvad
+sounddevice
