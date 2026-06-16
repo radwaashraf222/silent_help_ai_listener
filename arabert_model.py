@@ -4,7 +4,8 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch.nn.functional as F
 from utils import fix_arabic, a_log
 
-MODEL_PATH = "arabert_trained"
+#MODEL_PATH = "arabert_trained" LOCAL IN DEVICE
+MODEL_NAME = "radwaashrafkamel/arabert-custom-model" # MODEL ON HUGGINGFACE
 
 tokenizer = None
 model = None
@@ -12,9 +13,9 @@ def get_ara_model():
     global tokenizer, model
     if tokenizer is None or model is None:
         a_log("📦 Loading AraBERT model ...")
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+        tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
         model = AutoModelForSequenceClassification.from_pretrained(
-            MODEL_PATH
+            MODEL_NAME
         )
         model.eval()
     return tokenizer, model
