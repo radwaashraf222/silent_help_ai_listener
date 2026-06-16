@@ -1,0 +1,48 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# AI models / checkpoints
+arabert_trained/
+*.bin
+*.pt
+*.pth
+*.ckpt
+arabert_trained.zip
+
+# Temporary audio and recordings folders
+audio/
+certs/
+data/
+uploads/
+recordings/
+
+# Test and utility scripts not needed on GitHub
+check_recordings.py
+clean_temp.py
+generate_cert.py
+test_mic.py
+test_mic1.py
+child_chatbot.py
+test_arabert.py
+test_chatbot.py
+test_pipeline.py
+
+# Logs
+app.log
+*.log
+
+# Virtual environment
+venv/
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+*.png
+*.jpg
+*.jpeg
+*.svg
