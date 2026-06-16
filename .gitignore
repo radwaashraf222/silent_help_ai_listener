@@ -12,6 +12,11 @@ arabert_trained/
 *.ckpt
 arabert_trained.zip
 
+arabert-custom-model/
+*.safetensors
+*.pt
+checkpoint-306/
+
 # Temporary audio and recordings folders
 audio/
 certs/
