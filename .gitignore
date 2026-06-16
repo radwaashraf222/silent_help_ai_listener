@@ -18,6 +18,7 @@ certs/
 data/
 uploads/
 recordings/
+model_backups/
 
 # Test and utility scripts not needed on GitHub
 check_recordings.py
@@ -29,6 +30,7 @@ child_chatbot.py
 test_arabert.py
 test_chatbot.py
 test_pipeline.py
+load_model.py
 
 # Logs
 app.log
