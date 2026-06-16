@@ -16,3 +16,4 @@ webrtcvad
 matplotlib
 seaborn
 pydub
+gunicorn
