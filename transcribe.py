@@ -1,7 +1,7 @@
 #transcribe.py
 import tempfile
 import numpy as np
-import sounddevice as sd
+#import sounddevice as sd
 import scipy.io.wavfile as wav
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
@@ -21,14 +21,14 @@ def get_model():
         model = whisper.load_model(WHISPER_MODEL)
     return model
 
-def record_audio(duration=5):
-    a_log(f"🎤 Recording {duration}s ...")
-    recording = sd.rec(int(duration * SAMPLE_RATE), samplerate=SAMPLE_RATE, channels=1, dtype='float32')
-    sd.wait()
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
-        wav.write(tmp.name, SAMPLE_RATE, recording)
-        a_log(f"💾 Saved recording to {tmp.name}")
-        return tmp.name
+#def record_audio(duration=5):
+#    a_log(f"🎤 Recording {duration}s ...")
+#    recording = sd.rec(int(duration * SAMPLE_RATE), samplerate=SAMPLE_RATE, channels=1, dtype='float32')
+#    sd.wait()
+#    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
+#        wav.write(tmp.name, SAMPLE_RATE, recording)
+#        a_log(f"💾 Saved recording to {tmp.name}")
+#        return tmp.name
 
 def trim_silence(audio_path, silence_thresh=-40, chunk_size=10):
     audio = AudioSegment.from_wav(audio_path)
