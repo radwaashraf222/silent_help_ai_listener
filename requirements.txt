@@ -3,6 +3,8 @@ openai-whisper
 transformers
 datasets
 arabert
+huggingface_hub
+safetensors
 fastapi
 uvicorn
 librosa
