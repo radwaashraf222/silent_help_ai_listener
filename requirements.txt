@@ -12,7 +12,7 @@ soundfile
 scipy
 numpy
 webrtcvad
-#sounddevice
+sounddevice
 matplotlib
 seaborn
 pydub
