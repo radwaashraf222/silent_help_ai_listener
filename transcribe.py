@@ -1,7 +1,6 @@
 #transcribe.py
 import tempfile
 import numpy as np
-import sounddevice as sd
 import scipy.io.wavfile as wav
 from pydub import AudioSegment
 from pydub.silence import detect_nonsilent
@@ -22,6 +21,7 @@ def get_model():
     return model
 
 def record_audio(duration=5):
+    import sounddevice as sd
     a_log(f"🎤 Recording {duration}s ...")
     recording = sd.rec(int(duration * SAMPLE_RATE), samplerate=SAMPLE_RATE, channels=1, dtype='float32')
     sd.wait()
