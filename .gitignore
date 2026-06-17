@@ -36,6 +36,7 @@ test_arabert.py
 test_chatbot.py
 test_pipeline.py
 load_model.py
+main_local.py
 
 # Logs
 app.log
