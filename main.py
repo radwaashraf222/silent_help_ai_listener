@@ -5,7 +5,6 @@ from pipeline import analyze_text
 from utils import fix_arabic, a_log
 from utils import format_arabic_with_symbols
 import os  
-import sounddevice as sd  
 
 SAVE_FOLDER = "recordings"
 os.makedirs(SAVE_FOLDER, exist_ok=True)
@@ -47,7 +46,11 @@ def main():
                 a_log(f"💾 تم حفظ التسجيل الصوتي لأنه يحتوي على كلمات خطر: {final_path}")
             else:
                 try:
-                    sd.stop()  
+                    import sounddevice as sd
+                    sd.stop()
+                except Exception as e:
+                    a_log(f"⚠️ sounddevice غير متاح أو حدث خطأ أثناء إيقاف الصوت: {e}")
+                try:
                     if os.path.exists(audio_file):
                         os.remove(audio_file)
                         a_log(f"✅ الملف الآمن تم مسحه من Temp: {audio_file}")
