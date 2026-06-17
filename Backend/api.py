@@ -14,15 +14,17 @@ from transcribe import analyze_audio_file as original_analyze_audio_file
 app = FastAPI(title="Audio Analyzer API")
 logging.info("🚀 API Service Started Successfully")
 
-@app.on_event("startup")
-def load_models():
-    from arabert_model import get_ara_model
-    from transcribe import get_model
+# Models are loaded lazily on the first request (see analyze_audio_file)
+# instead of at startup, so the health check passes quickly and the
+# deploy does not time out while downloading the models from HuggingFace.
 
-    get_model()
-    get_ara_model()
+@app.get("/")
+def root():
+    return {"status": "ok", "service": "Audio Analyzer API"}
 
-    logging.info("🚀 Models loaded once at startup")
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
 
 logging.basicConfig(
     level=logging.INFO,
