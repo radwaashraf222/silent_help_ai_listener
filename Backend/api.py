@@ -22,6 +22,14 @@ logging.info("🚀 API Service Started Successfully")
 def root():
     return {"status": "ok", "service": "Audio Analyzer API"}
 
+@app.on_event("startup")
+def load_models():
+    from arabert_model import get_ara_model
+#    from transcribe import get_model
+
+#    get_model()
+    get_ara_model()
+
 @app.get("/health")
 def health():
     return {"status": "healthy"}
@@ -43,6 +51,12 @@ os.makedirs(SAVE_FOLDER, exist_ok=True)
 
 # -----------------------------
 #model_loaded = False
+@app.get("/warmup")
+def warmup():
+    from transcribe import get_model
+    get_model()
+    return {"status": "Whisper loaded"}
+
 
 def analyze_audio_file(file_path):
     global model_loaded, original_analyze_audio_file
