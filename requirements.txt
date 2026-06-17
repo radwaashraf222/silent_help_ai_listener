@@ -17,3 +17,5 @@ matplotlib
 seaborn
 pydub
 gunicorn
+arabic_reshaper
+python-bidi
