@@ -24,11 +24,12 @@ def root():
 
 @app.on_event("startup")
 def load_models():
-    from arabert_model import get_ara_model
+#    from arabert_model import get_ara_model
 #    from transcribe import get_model
 
 #    get_model()
-    get_ara_model()
+#    get_ara_model()
+    pass
 
 @app.get("/health")
 def health():
