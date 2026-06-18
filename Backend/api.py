@@ -54,9 +54,9 @@ os.makedirs(SAVE_FOLDER, exist_ok=True)
 #model_loaded = False
 @app.get("/warmup")
 def warmup():
-    from transcribe import get_model
-    get_model()
-    return {"status": "Whisper loaded"}
+#    from transcribe import get_model
+#    get_model()
+    return {"status": "OK"}
 
 
 def analyze_audio_file(file_path):
